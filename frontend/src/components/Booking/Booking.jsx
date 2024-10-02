@@ -1,10 +1,14 @@
 import React, {useState} from 'react';
 import './booking.css';
-import { Form, FormGroup, ListGroupItem, Button, ListGroup } from 'reactstrap';
+import { Form, FormGroup, ListGroupItem, Button, ListGroup, NavItem } from 'reactstrap';
+
+import { useNavigate } from 'react-router-dom';
 
 const Booking = ({ tour, avgRating }) => {
   const {price, reviews} = tour;
-  const {creadentials, setCreadentials} = useState({
+  const navigate = useNavigate()
+
+  const [creadentials, setCreadentials] = useState({
     userId: '01',
     useEmail : 'exmaple@gmail.com',
     fullName: '',
@@ -17,10 +21,14 @@ const Booking = ({ tour, avgRating }) => {
     setCreadentials(prev=>({...prev, [e.target.id]:e.target.value}))
   };
 
+const serviceFee = 10
+const totalAmount = Number(price) * Number(creadentials.guestSize) + Number(serviceFee)
+
 // send data to the server
 const handleClick = e=>{
   e.preventDefault();
-  console.log(creadentials);
+  // console.log(creadentials);
+  navigate('/thank-you');
 }
 
   return (
@@ -86,11 +94,11 @@ const handleClick = e=>{
           </ListGroupItem>
           <ListGroupItem className='border-0 px-0'>
               <h5>Service Charge</h5>
-              <span> $10 </span>
+              <span> ${serviceFee} </span>
           </ListGroupItem>
           <ListGroupItem className='border-0 px-0 total'>
               <h5>Total</h5> 
-              <span> $109 </span>
+              <span> ${totalAmount} </span>
           </ListGroupItem>
         </ListGroup>
 
