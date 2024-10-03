@@ -4,6 +4,8 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 
+import tourRoute from './routes/tours.js';
+
 dotenv.config();
 const app = express();
 const port = process.env.PORT || 8000;
@@ -17,14 +19,17 @@ const connect = async()=> {
         })
         console.log("MongoDB database Connected");
     }catch(err){
-        console.log(err);
+        console.log("Connection to mongoDB failed!");
     }
 }
+
 
 // middleware
 app.use(express.json());
 app.use(cors());
 app.use(cookieParser());
+app.use('/tours', tourRoute)
+
 
 app.listen(port,()=>{
     connect();
