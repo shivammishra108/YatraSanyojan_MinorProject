@@ -10,12 +10,12 @@ router.post('/', createTour);
 router.put('/:id', updateTour);
 
 // delete tour
-router.delete('/', deleteTour);
+router.delete('/:id', deleteTour);
 
 // get single tour
 router.get('/:id', getSingleTour);
 
-// create new tour
+// get all tour
 router.get('/', getALLTour);
 
 export default router;
