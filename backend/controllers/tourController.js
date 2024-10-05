@@ -98,7 +98,7 @@ export const getSingleTour = async (req,res)=>{
 };
 
 // get aLL tour
-export const getALLTour = async (req,res)=>{
+export const getAllTour = async (req,res)=>{
 
     // for pagination
     const page = parseInt(req.query.page);
