@@ -1,22 +1,22 @@
 import jwt from 'jsonwebtoken';
 
-const verifyToken = (req,res,next)=>{
-    const token = req.cookies.accessToken;
+export const verifyToken = (req,res,next)=>{
+    const token = req.cookies.accessToken
 
     if(!token){
         return res.status(401).json({success:false, message:"You are not authorized"});
     }
 
     // if token is exist then verify the token
-    jwt.verify(token, process.env.JWT_SECRET_KEY, (err,user)=>{
+    jwt.verify(token, process.env.JWT_SECRETE_KEY, (err,user)=>{
         if(err){
-            return res.status(4).json({success:false, message:"Token is invalid!"});
+            return res.status(401).json({success:false, message:"Token is invalid!"});
         }
-    })
+        req.user = user
+        next(); // call next middleware
+    });
+};
 
-    req.user = user
-    next(); // call next middleware
-}
 
 export const verifyUser = (req, res, next)=>{
     verifyToken(req, res, next, ()=>{
@@ -24,11 +24,11 @@ export const verifyUser = (req, res, next)=>{
             next();
         }else{
             return res.
-            status(4)
-            .json({success:false, message:"You are not authenticated"});
+            status(401)
+            .json({success:false, message:"You're not authenticated"});
         }
     });
-}
+};
 
 export const verifyAdmin = (req, res, next)=>{
     verifyToken(req,res,next,()=>{
@@ -36,8 +36,8 @@ export const verifyAdmin = (req, res, next)=>{
             next()
         }else{
             return res
-            .status(4)
+            .status(401)
             .json({success:false, message:"You are not authorize"});
         }
-    })
-}
+    });
+};
