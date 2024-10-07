@@ -30,8 +30,9 @@ const Home = () => {
                 <img src={worldImg} alt="" />
               </div>
               <h1>Travelling opens the door to creating <span className='highlight'>memories</span></h1>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam labore voluptatum eveniet cumque mkfdk
-                m aliquam veniam ducimus magnam possimus? Exercitationem modi quo sit maxime, ea consequuntur.</p>
+              <p> <b>Yatra Sanyojan</b>: <i>‘Gateway to effortless travel and local adventures’</i>, represents a 
+                significant advancement in the travel industry by offering a sophisticated platform 
+                that caters to the diverse needs of both travellers and service providers.</p>
             </div>
           </Col>
           
