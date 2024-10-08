@@ -15,12 +15,12 @@ const servicesData = [
   {
     imgUrl: guideImg,
     title: "Best Tour Guide",
-    desc: "Analyse the weather , is it suitable for you or not."
+    desc: "Our experienced tour guides provide local insights and ensure you have an enriching experience at every destination."
   },
   {
     imgUrl: customizationImg,
     title: "Customization",
-    desc: "Analyse the weather , is it suitable for you or not."
+    desc: "We create personalized itineraries tailored to your interests and preferences, ensuring your trip is uniquely yours."
   },
 ]
 

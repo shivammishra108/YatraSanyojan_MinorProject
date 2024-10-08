@@ -37,8 +37,8 @@ const Testimonials = () => {
     }
   return <Slider {...settings}>
     <div className="testimonial py-4 px3">
-        <p>Lorem ipsum dolor sit amet consectetur ad.
-        dolor sit amet consectetur adipisicing elit.c.
+        <p>Yatra Sanyojan made our trip unforgettable! 
+            The accommodations were top-notch and perfectly located
         </p>
         <div className='d-flex align-items-center gap-4 mt-3'>
             <img src={ava01} alt="testimonial" className='w-25 h-25 rounded-2' />
@@ -49,8 +49,8 @@ const Testimonials = () => {
         </div>
     </div>
     <div className="testimonial py-4 px3">
-        <p>Lorem ipsum dolor sit amet c.
-        dolor sit amet consectetur adipisicing elit.
+        <p>Exceptional service and great options!
+            I found the perfect stay for our family vacation.
         </p>
         <div className='d-flex align-items-center gap-4 mt-3'>
             <img src={ava02} alt="testimonial" className='w-25 h-25 rounded-2' />
@@ -61,8 +61,8 @@ const Testimonials = () => {
         </div>
     </div>
     <div className="testimonial py-4 px3">
-        <p>Lorem ipsum dolor sit am
-        dolor sit amet consectetur adipisicing elit.consequat.
+        <p>A seamless travel experience! Yatra Sanyojan 
+            took care of everything, allowing us to relax and enjoy
         </p>
         <div className='d-flex align-items-center gap-4 mt-3'>
             <img src={ava05} alt="testimonial" className='w-25 h-25 rounded-2' />
@@ -73,8 +73,8 @@ const Testimonials = () => {
         </div>
     </div>
     <div className="testimonial py-4 px3">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing
-        dolor sit amet consectetur.
+        <p>Fantastic selection of accommodations! 
+            Highly recommend for anyone planning their next adventure.
         </p>
         <div className='d-flex align-items-center gap-4 mt-3'>
             <img src={ava03} alt="testimonial" className='w-25 h-25 rounded-2' />
@@ -85,8 +85,8 @@ const Testimonials = () => {
         </div>
     </div>
     <div className="testimonial py-4 px3">
-        <p>Lorem ipsum dolor sit am
-        dolor sit amet consectetur adipisicing elit.consequat.
+        <p>Stress-free booking and amazing stays! 
+            Yatra Sanyojan is my go-to for all travel needs
         </p>
         <div className='d-flex align-items-center gap-4 mt-3'>
             <img src={ava04} alt="testimonial" className='w-25 h-25 rounded-2' />

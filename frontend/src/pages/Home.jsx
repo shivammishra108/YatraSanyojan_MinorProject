@@ -95,8 +95,10 @@ const Home = () => {
             <div className="experience__content">
               <Subtitle subtitle={'Experience'} />
               <h2>With our all experience <br /> we will serve you</h2>
-              <p>Lorem ipisicing riosam brempora quae a <br />
-                td corrupti!t ullam itaque, similique et.</p>
+              <p><br /> We believe in creating memorable travel experiences tailored to your needs. <br />
+                      Our team works tirelessly to ensure you find the perfect accommodations <br />
+                      and enjoy seamless journeys. <br /> 
+              </p>
             </div>
 
             <div className="counter__wrapper d-flex align-items-center gap-5">
