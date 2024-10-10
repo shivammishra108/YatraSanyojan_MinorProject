@@ -15,7 +15,7 @@ const app = express();
 const port = process.env.PORT || 8000;
 const corsOptions = {
     origin: true,
-    credential: true
+    credentials: true
 }
 
 // database connection
