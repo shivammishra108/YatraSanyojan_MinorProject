@@ -1,16 +1,20 @@
-import React, {useState} from 'react';
+import React, {useState, useContext } from 'react';
 import './booking.css';
-import { Form, FormGroup, ListGroupItem, Button, ListGroup, NavItem } from 'reactstrap';
+import { Form, FormGroup, ListGroupItem, ListGroup} from 'reactstrap';
 
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthContext';
+import { BASE_URL } from '../../utils/config';
 
 const Booking = ({ tour, avgRating }) => {
-  const {price, reviews} = tour;
-  const navigate = useNavigate()
+  const {price, reviews, title} = tour;
+  const navigate = useNavigate();
+  const { user } = useContext(AuthContext);
 
-  const [creadentials, setCreadentials] = useState({
-    userId: '01',
-    useEmail : 'exmaple@gmail.com',
+  const [booking, setBooking] = useState({
+    userId: user && user._id,
+    useEmail : user && user.email,
+    tourName: title,
     fullName: '',
     phone: '',
     guestSize:1,
@@ -18,18 +22,45 @@ const Booking = ({ tour, avgRating }) => {
   });
 
   const handleChange = e=> {
-    setCreadentials(prev=>({...prev, [e.target.id]:e.target.value}))
+    setBooking(prev=>({...prev, [e.target.id]:e.target.value}))
   };
 
 const serviceFee = 10
-const totalAmount = Number(price) * Number(creadentials.guestSize) + Number(serviceFee)
+const totalAmount = Number(price) * Number(booking.guestSize) + Number(serviceFee)
 
 // send data to the server
-const handleClick = e=>{
+const handleClick = async e=>{
   e.preventDefault();
-  // console.log(creadentials);
-  navigate('/thank-you');
-}
+
+  // Check for required fields
+  const { fullName, phone, bookAt, guestSize } = booking;
+  
+  if (!fullName || !phone || !bookAt || !guestSize) {
+    return alert('Please fill out all fields.');
+  }
+  console.log(booking);
+  
+  try{
+    if(!user || user===undefined || user===null){
+      return alert('Please sign in');
+    }
+    const res = await fetch(`${BASE_URL}/booking`,{
+      method:'post',
+      headers:{
+        'content-type': 'application/json'
+      },
+      credentials: 'include',
+      body: JSON.stringify(booking)
+    });
+    const result = await res.json();
+    if(!res.ok){
+      return alert(result.message);
+    }
+    navigate('/thank-you');
+  }catch(err){
+    alert("error occurs");
+  }
+};
 
   return (
     <div className="booking">
@@ -102,7 +133,7 @@ const handleClick = e=>{
           </ListGroupItem>
         </ListGroup>
 
-        <button className='btn primary__btn w-100 mt-4' onClick={handleClick} >Book Now</button>
+        <button className='btn primary__btn w-100 mt-4' onClick={handleClick}  type='submit'>Book Now</button>
       </div>
       {/*==========booking bottom end============*/}
     </div>
