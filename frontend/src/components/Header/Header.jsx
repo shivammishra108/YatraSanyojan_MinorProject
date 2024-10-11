@@ -1,9 +1,10 @@
-import React,{useRef, useEffect,useContext} from 'react'
+import React,{useRef, useEffect,useContext, useState} from 'react'
 import { Container, Row,Button} from 'reactstrap';
 import { NavLink, Link, useNavigate } from 'react-router-dom';
 
 import logo from '../../assets/images/logo.png';
 import './header.css';
+import LogoutConfirm from './LogoutConfirm';
 
 import { AuthContext } from '../../context/AuthContext';
 
@@ -27,13 +28,29 @@ const Header = () => {
   const navigate = useNavigate();
   const { user, dispatch } = useContext(AuthContext);
 
-  const logout = ()=>{
-    const confirmLogout = window.confirm("Are you sure you want to log out?");
-    if(confirmLogout){
-      dispatch({type: 'LOGOUT'});
-      navigate('/');
-    }
-  };
+  const[ isModalOpen, setModalOpen ] = useState(false);
+
+  const logout = () => {
+    setModalOpen(true); // Open the modal
+};
+
+const handleConfirmLogout = () => {
+  dispatch({ type: 'LOGOUT' });
+  navigate('/');
+  setModalOpen(false); // Close the modal
+};
+
+const handleCloseModal = () => {
+  setModalOpen(false); // Close the modal
+};
+
+  // const logout = ()=>{
+  //   const confirmLogout = window.confirm("Are you sure you want to log out?");
+  //   if(confirmLogout){
+  //     dispatch({type: 'LOGOUT'});
+  //     navigate('/');
+  //   }
+  // };
 
   const stickyHeaderFunc = ()=>{
     window.addEventListener('scroll',()=>{
@@ -99,6 +116,15 @@ const Header = () => {
           </div>
         </Row>
       </Container>
+
+      {/* Added the LogoutConfirm modal here */}
+      <LogoutConfirm 
+        isOpen={isModalOpen} 
+        onClose={handleCloseModal} 
+        onConfirm={handleConfirmLogout} 
+        message="Are you sure you want to log out?" 
+      />
+      
     </header>
   )
 }
