@@ -38,6 +38,7 @@
 }
 
 .newsletter__btn{
+    width: 10% !important;
     padding: 0.5rem 1.5rem I !important;
     background: var(--secondary-color) !important;
     color: #fff !important;

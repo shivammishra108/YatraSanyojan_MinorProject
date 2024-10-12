@@ -48,14 +48,24 @@ ul {
   padding: 0.4rem 1.5rem !important;
 }
 
+
 .primary__btn a {
   font-size: 1.1rem;
   text-decoration: none;
   color: #fff;
 }
-.primary__btn a:hover {
+
+.primary__btn:hover{
   color: inherit;
+  background-color: var(--primary-color) !important;
+  transform: translateY(-2px);
 }
+
+.primary__btn:focus {
+  outline: none;
+  box-shadow: 0 0 5px var(--primary-color); 
+}
+
 .secondary__btn {
   background: transparent !important;
   color: #0b2727 !important;
@@ -69,8 +79,14 @@ ul {
   color: var(--heading-color);
 }
 
-.secondary__btn a:hover {
+.secondary__btn:hover{
   color: inherit;
+  transform: translateY(-2px);
+}
+
+.secondary__btn:focus {
+  outline: none;
+  box-shadow: 0 0 5px var(--primary-color); 
 }
 
 .section__subtitle {

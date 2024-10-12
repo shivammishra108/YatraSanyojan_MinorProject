@@ -21,12 +21,12 @@ const quick__links=[
 
 const quick__links2=[
   {
-    path:'/gallery',
-    display:'Gallery'
+    path:'/help',
+    display:'Help Center'
   },
   {
-    path:'/login',
-    display:'Login'
+    path:'/policy',
+    display:'Our Policy'
   },
   {
     path:'/register',
@@ -48,16 +48,24 @@ const Footer = () => {
 
               <div className="social__links d-flex align-items-center gap-4">
                 <span>
-                  <Link to='#'><i className="ri-linkedin-box-fill"></i></Link>
+                <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">
+                  <i className="ri-linkedin-box-fill"></i>
+                </a>
                 </span>
                 <span>
-                  <Link to='#'><i className="ri-github-fill"></i></Link>
+                <a href="https://github.com/yourprofile" target="_blank" rel="noopener noreferrer">
+                  <i className="ri-github-fill"></i>
+                </a>
                 </span>
                 <span>
-                  <Link to='#'><i className="ri-facebook-circle-fill"></i></Link>
+                <a href="https://www.instagram.com/yourprofile" target="_blank" rel="noopener noreferrer">
+                  <i className="ri-instagram-fill"></i>
+                </a>
                 </span>
                 <span>
-                  <Link to='#'><i className="ri-instagram-fill"></i></Link>
+                <a href="https://www.facebook.com/yourprofile" target="_blank" rel="noopener noreferrer">
+                  <i className="ri-facebook-circle-fill"></i>
+                </a>
                 </span>
               </div>
             </div>
@@ -96,21 +104,27 @@ const Footer = () => {
                     <span><i className="ri-map-pin-line"></i></span>
                     Address:
                   </h6>
-                  <p className="mb-0">Bangkok, Thailand</p>
+                  <p className="mb-0">
+                  <a href="https://www.google.com/maps/search/?api=1&query=Bangkok,+Thailand" target="_blank" rel="noopener noreferrer">Bangkok, Thailand</a>
+                  </p>
                 </ListGroupItem>
                 <ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-2'>
                   <h6 className='mb-0 d-flex align-items-center gap-2'>
                     <span><i className="ri-mail-line"></i></span>
                     Email:
                   </h6>
-                  <p className="mb-0">yatraSanyojan@gmail.com</p>
+                  <p className="mb-0">
+                    <a href="mailto:yatraSanyojan@gmail.com" target="_blank" rel="noopener noreferrer">yatraSanyojan@gmail.com</a>
+                  </p>
                 </ListGroupItem>
                 <ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-2'>
                   <h6 className='mb-0 d-flex align-items-center gap-2'>
                     <span><i className="ri-phone-fill"></i></span>
                     Phone:
                   </h6>
-                  <p className="mb-0">+91 7267024717</p>
+                  <p className="mb-0">
+                   <a href="tel:+917267024717" target="_blank" rel="noopener noreferrer">+91 7267024717</a>
+                  </p>
                 </ListGroupItem>
               </ListGroup>
             </Col>

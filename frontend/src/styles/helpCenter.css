@@ -1,0 +1,183 @@
+.help-center {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.intro {
+  text-align: center;
+}
+
+.intro h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: var(--heading-color);
+}
+
+.intro p {
+  font-size: 1.2rem;
+  color: var(--text-color);
+}
+
+.support-image {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 20px 0;
+  font-size: 1rem;
+}
+
+.section-divider {
+  height: 2px;
+  background: var(--secondary-color);
+  margin: 30px 0;
+}
+
+.faq {
+  margin-bottom: 30px;
+}
+
+.faq h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.faq-description p {
+  font-size: 1rem;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.faq-item {
+  margin: 15px 0;
+  border: 1px solid #eaeaea;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.faq-question {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background: var(--primary-color);
+  color: white;
+}
+
+.faq-question h3 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.arrow {
+  transition: transform 0.2s;
+}
+
+.arrow.open {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  padding: 15px;
+  background: #f1f1f1;
+}
+
+.customer-care {
+  text-align: center;
+}
+
+.customer-care h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.customer-care p {
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+.customer-care ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.customer-care li {
+  margin: 5px 0;
+}
+
+
+.download-resources {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.download-resources h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.download-resources ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.download-resources li {
+  margin: 5px 0;
+}
+
+.download-resources a {
+  color: var(--primary-color);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--primary-color);
+}
+
+.download-resources a:hover {
+  text-decoration: underline;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .intro h1 {
+    font-size: 2rem;
+  }
+
+  .intro p,
+  .faq h2,
+  .customer-care h2,
+  .download-resources h2 {
+    font-size: 1.5rem;
+  }
+
+  .search-bar {
+    font-size: 0.9rem;
+  }
+}
