@@ -1,40 +1,76 @@
-.footer{
+.footer {
     padding-top: 70px;
     padding-bottom: 30px;
 }
 
-.footer .logo img{
+.footer .logo img {
     width: 50%;
     margin-bottom: 1rem;
 }
 
-.footer .logo p{
+.footer .logo p {
     color: var(--text-color);
 }
 
-.social__links span a{
+.social__links span a {
     text-decoration: none;
     color: var(--heading-color);
     font-size: 1.2rem;
 }
 
-.footer__link-title{
+.footer__link-title {
     color: var(--heading-color);
     margin-bottom: 1rem;
 }
 
-.footer__quick-links li a{
+.footer__quick-links li a {
     text-decoration: none;
     color: var(--text-color);
     font-size: 1.1rem;
 }
 
-.footer__quick-links h6 span i{
+.footer__quick-links h6 span i {
     color: var(--secondary-color);
-    font-size: 1.1rem ;
+    font-size: 1.1rem;
 }
 
-.copyright{
+.copyright {
     color: var(--text-color);
     font-size: 1rem;
+}
+
+.footer-links-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.footer-links-container > div {
+    flex: 1; 
+    margin: 10px;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 992px) {
+    .footer-links-container > div {
+        flex: 1 1 33%; /* All three items in a row for larger screens */
+    }
+    .footer .logo img{
+        width: 30%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .footer-links-container > div {
+        flex: 1 1 45%; /* Two items in a row for medium screens */
+    }
+    .footer .logo img{
+        width: 25%;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .footer-links-container > div {
+        flex: 1 1 100%; /* Stack items vertically */
+    }
 }
