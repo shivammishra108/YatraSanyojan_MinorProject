@@ -1,0 +1,109 @@
+/* src/components/about/services/services.css */
+:root {
+  --primary-color: #ff7e01;
+  --secondary-color: #faa935;
+  --heading-color: #0b2727;
+  --text-color: #6e7074;
+  --font-name: "Montserrat", sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-name);
+}
+
+.services-section {
+  padding: 50px 20px;
+  background: linear-gradient(to right, #f0f4c3, #a5d6a7);
+  text-align: center;
+  position: relative;
+}
+
+.services-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: var(--heading-color);
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.service-item {
+  position: relative;
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.6s ease, box-shadow 0.3s ease !important;
+  animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.service-item:hover {
+  transform: translateY(-10px);
+  transform: scale(1.005) !important;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+}
+
+.service-icon {
+  font-size: 50px;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  transition: transform 0.3s;
+}
+
+.service-item:hover .service-icon {
+  transform: rotate(360deg);
+}
+
+.service-content {
+  text-align: left;
+}
+
+.service-content h3 {
+  font-size: 1.8rem;
+  color: var(--heading-color);
+  margin-bottom: 10px;
+}
+
+.service-content p {
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .services-section h2 {
+    font-size: 2rem;
+  }
+
+  .service-item {
+    padding: 20px;
+  }
+}

@@ -1,34 +1,48 @@
-.service__item{
-    padding: 1rem;
-    border-bottom: 1px solid #faa83586;
-    border-right: 1px solid #faa83586;
-    border-radius: 0.5rem;
+/* src/components/about/services/service-card.css */
+
+.service__item {
+  padding: 1rem;
+  border-bottom: 1px solid #faa83586;
+  border-right: 1px solid #faa83586;
+  border-radius: 0.5rem;
+  transition: transform 0.3s, box-shadow 0.3s; /* Add transition for hover effects */
+  position: relative; /* For positioning elements inside */
+  background: white; /* Set background for the item */
+  margin-bottom: 1rem; /* Add spacing between items */
 }
 
-.service__img{
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50px;
-    background: var(--secondary-color);
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-    line-height: 50px;
+.service__img {
+  width: 50px; /* Slightly increase size for better visibility */
+  height: 50px; /* Slightly increase size for better visibility */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%; /* Make it a circle */
+  background: var(--secondary-color);
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
-.service__img img{
-    width: 100%;
+.service__img img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 50%; /* Ensure the image fits well inside the circle */
 }
 
-.service__item h5{
-    font-size: 1.1rem;
-    font-weight: 500;
+.service__item h5 {
+  font-size: 1.2rem; /* Slightly increase font size */
+  font-weight: 600; /* Change weight for better visibility */
+  margin: 0.5rem 0; /* Add margin for spacing */
 }
 
-.service__item p{
-    font-size: 0.9rem;
-    color: var(--text-color);
+.service__item p {
+  font-size: 0.9rem;
+  color: var(--text-color);
+  line-height: 1.4; /* Improve readability */
 }
 
+/* Add hover effect for the item */
+.service__item:hover {
+  transform: translateY(-5px); /* Slight lift effect */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}

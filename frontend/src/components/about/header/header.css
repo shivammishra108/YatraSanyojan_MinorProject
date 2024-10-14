@@ -1,0 +1,74 @@
+.about-header {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: whitesmoke;
+  /* background: linear-gradient(120deg, var(--primary-color), var(--secondary-color)); */
+  color: white;
+  overflow: hidden;
+  font-family: var(--font-name); /* Use primary font */
+}
+
+.hero-content {
+  z-index: 9;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: var(--heading-color); /* Heading color */
+}
+
+.hero-subtitle {
+  font-size: 3rem;
+  color: var(--primary-color);
+  font-weight: 700;
+  font-family: var(--subtitle-font-name); /* Use subtitle font */
+}
+
+.globe-container {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust to perfectly center it */
+  width: 400px;
+  height: 400px;
+}
+
+.globe {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: url('../../../assets/images/globe.png') no-repeat center center;
+  background-size: cover;
+  animation: rotate 20s infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem; /* Adjust title size for smaller screens */
+  }
+
+  .globe-container {
+    width: 250px; /* Adjust globe size for smaller screens */
+    height: 250px;
+  }
+
+  .globe {
+    width: 100%;
+    height: 100%;
+  }
+}
