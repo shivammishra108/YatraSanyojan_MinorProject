@@ -21,6 +21,7 @@ const ThankYou = () => {
             </Col>
         </Row>
     </Container>
+    <Newsletter />
   </section>
 
 }

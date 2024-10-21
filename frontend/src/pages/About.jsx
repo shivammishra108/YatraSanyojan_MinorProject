@@ -12,8 +12,8 @@ const About = () => {
   return (
     <div className="about-page">
       <Header />
-      <Services />
       <TravelPackages />
+      <Services />
       <MissionVision />
       <Team />
       <Gallery />

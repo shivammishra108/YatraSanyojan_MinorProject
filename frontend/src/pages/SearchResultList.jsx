@@ -17,7 +17,7 @@ const SearchResultList = () => {
         <Container>
           <Row>
             {
-              data.length == 0 ?(
+              data.length === 0 ?(
               <h4 className='text-center'>No tour found</h4>
                ) : (
               data?.map(tour => (
