@@ -12,7 +12,7 @@ import { AuthContext } from '../context/AuthContext';
 import { BASE_URL } from '../utils/config';
 
 const Login = () => {
-  const [creadentials, setCreadentials] = useState({
+  const [credentials, setCredentials] = useState({
     email: undefined,
     password: undefined,
   });
@@ -21,7 +21,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleChange = (e) => {
-    setCreadentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
+    setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
 
   const handleClick = async (e) => {
@@ -35,7 +35,7 @@ const Login = () => {
           'Content-Type': 'application/json',
         },
         credentials: 'include',
-        body: JSON.stringify(creadentials),
+        body: JSON.stringify(credentials),
       });
 
       const result = await res.json();
@@ -43,10 +43,20 @@ const Login = () => {
         toast.error(result.message); // Show error alert if login fails
       } else {
         dispatch({ type: 'LOGIN_SUCCESS', payload: result.data });
-        toast.success('Login successful!'); // Show success alert if login succeeds
-        setTimeout(() => {
-          navigate('/');
-        }, 1500); // Delay redirect to allow toast to show
+        // toast.success('Login successful!'); // Show success alert if login succeeds
+
+        // Redirect based on user role
+        if (result.role === 'admin') {
+          toast.success('ADMIN login Successful!'); // Show success alert if login succeeds
+          setTimeout(() => {
+            navigate('/admin/dashboard'); // Redirect to Admin Dashboard
+          }, 2000);
+        } else {
+          toast.success('Login successful!');
+          setTimeout(() => {
+            navigate('/'); // Redirect to home or user dashboard
+          }, 1500);
+        }
       }
     } catch (err) {
       dispatch({ type: 'LOGIN_FAILURE', payload: err.message });

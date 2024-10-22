@@ -10,6 +10,8 @@ import SearchResultList from './../pages/SearchResultList';
 import ThankYou from '../pages/ThankYou';
 import HelpCenter from '../pages/HelpCenter';
 import Policy from '../pages/Policy';
+import AdminDashboard from '../pages/AdminDashboard.jsx';
+import ProtectedRoute from '../components/ProtectedRoute.js';
 
 const Routers = () => {
   return (
@@ -25,6 +27,11 @@ const Routers = () => {
         <Route path='/tours/search' element={<SearchResultList />} />
         <Route path='/help' element={<HelpCenter />} />
         <Route path='/policy' element={<Policy />} />
+        <Route path="/admin/dashboard" element={
+                    <ProtectedRoute>
+                        <AdminDashboard />
+                    </ProtectedRoute>
+                } />
     </Routes>
   )
 }
