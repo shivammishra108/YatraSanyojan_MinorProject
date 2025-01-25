@@ -48,7 +48,7 @@ const Footer = () => {
 
               <div className="social__links d-flex align-items-center gap-4">
                 <span>
-                <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/shivammishra108" target="_blank" rel="noopener noreferrer">
                   <i className="ri-linkedin-box-fill"></i>
                 </a>
                 </span>
@@ -58,7 +58,7 @@ const Footer = () => {
                 </a>
                 </span>
                 <span>
-                <a href="https://www.instagram.com/yourprofile" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.instagram.com/khatri.shaily_?igsh=MW11cnI1ampldTltYQ==" target="_blank" rel="noopener noreferrer">
                   <i className="ri-instagram-fill"></i>
                 </a>
                 </span>

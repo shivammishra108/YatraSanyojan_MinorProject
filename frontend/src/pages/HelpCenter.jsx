@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/helpCenter.css';
+import CommonSection from '../shared/CommonSection';
 import supportImage from '../assets/images/support.jpeg';
 
 const HelpCenter = () => {
@@ -38,6 +39,8 @@ const HelpCenter = () => {
   );
 
   return (
+    <>
+    <CommonSection title={'Need Assistance?'} />
     <div className="help-center">
       <div className="intro">
         <h1>Welcome to Our Help Center</h1>
@@ -81,9 +84,9 @@ const HelpCenter = () => {
         <h2>Customer Care</h2>
         <p>If you have any questions or need assistance, our customer care team is here to help:</p>
         <ul>
-          <li>Email: <a href="mailto:support@example.com">support@example.com</a></li>
+          <li>Email: <a href="mailto:support@example.com">support@yatraSanyojan.com</a></li>
           <li>Phone: <a href="tel:+917267024717">+91 7267024717</a></li>
-          <li>Operating Hours: Monday to Friday, 9 AM to 6 PM</li>
+          <li>Operating Hours: All Days, 9 AM to 10 PM</li>
         </ul>
       </section>
 
@@ -119,14 +122,15 @@ const HelpCenter = () => {
         <h2>Downloadable Resources</h2>
         <p>Get our travel guides in PDF format:</p>
         <ul>
-          <li><a href="/guides/travel-guide.pdf" download>Download Travel Guide</a></li>
-          <li><a href="/guides/tips.pdf" download>Download Travel Tips</a></li>
+          <li><a href="https://widgety-assets.s3.amazonaws.com/2021/10/17/23/14/38/789e68bc-954f-45b0-9cee-dfe7c1645fb3/Colette%20Worldwide%20Travel%20Guide%202021-2023.pdf" download target='_blank'  rel="noreferrer">Download Travel Guide</a></li>
+          <li><a href="https://www.ur.edu.pl/files/ur/import/private/137/E-dydaktyka/Materialy-dydaktyczne/Angielski/KNM/Turystyka-i-rekreacja/Mgr-Maria-Lisiewicz/30-Tips-and-Ways-to-Stay-Safe-While-Traveling-mgr-Maria-Lisiewicz.pdf" download target='_blank'  rel="noreferrer">Download Travel Tips</a></li>
         </ul>
       </section>
 
       <div className="section-divider" />
       
     </div>
+  </>
   );
 };
 

@@ -1,0 +1,75 @@
+.slider-section {
+    padding: 40px 20px;
+    background-color: #f9f9f9;;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    overflow: hidden;
+  }
+  
+  .slider-card {
+    background-color: rgb(246, 242, 238);
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    max-width: 600px;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1.5s ease;
+  }
+  
+  .slider-title {
+    font-size: 2.1rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #121211;
+  }
+  
+  .slider-description {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+  }
+  
+  .slider-container {
+    position: relative;
+    overflow: hidden;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .slider-item {
+    position: absolute;
+    opacity: 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: orangered;
+    transition: all 0.7s ease;
+    transform: translateY(50px);
+  }
+  
+  .slider-item.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .slider-item.inactive {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

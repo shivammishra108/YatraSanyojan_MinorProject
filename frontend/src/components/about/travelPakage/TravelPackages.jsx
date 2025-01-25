@@ -1,5 +1,5 @@
 // src/components/about/travel-plans/TravelPlans.jsx
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './travel-packages.css';
 import { FaUserFriends, FaHeart, FaCompass } from 'react-icons/fa';
 
@@ -26,21 +26,29 @@ const travelPlansData = [
 ];
 
 const TravelPackages = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % travelPlansData.length);
+    }, 2000); // Change slide every 3 seconds
+    return () => clearInterval(interval); // Cleanup on component unmount
+  }, []);
+
   return (
     <section className="travel-plans-section">
       <h2>Discover Your Travel Plans</h2>
       <div className="plans-container">
-        {travelPlansData.map((plan) => (
-          <div key={plan.id} className="plan-item">
+        {travelPlansData.map((plan, index) => (
+          <div
+            key={plan.id}
+            className={`plan-item ${index === currentIndex ? 'active' : ''}`}
+          >
             <div className="plan-inner">
               <div className="plan-front">
                 {plan.icon}
-                <h3>{plan.title}</h3>
+                <h3 className='plan-title'>{plan.title}</h3>
                 <p className="plan-details">{plan.description}</p>
-              </div>
-              <div className="plan-back">
-                <h3>{plan.title} - More Info</h3>
-                <p>Discover more about this plan and how it can transform your travels.</p>
               </div>
             </div>
           </div>

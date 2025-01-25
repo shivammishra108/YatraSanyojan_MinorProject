@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import CommonSection from '../shared/CommonSection';
 import '../styles/policy.css';
 
 const Policy = () => {
@@ -9,9 +10,9 @@ const Policy = () => {
   };
 
   return (
+    <>
+    <CommonSection title={'Our Policies'} />
     <div className="policy-page">
-      <h1 className="policy-title">Our Policies</h1>
-
       <section className="policy-section">
         <h2>Cancellation Policy</h2>
         <p>
@@ -238,6 +239,7 @@ const Policy = () => {
       </p>
     </div>
     
+  </>
   );
 };
 

@@ -1,34 +1,69 @@
+/* General styles for team section */
 .team-section {
-    padding: 60px 20px;
-    background-color: #f7f7f7;
-    text-align: center;
-  }
-  
+  padding: 60px 20px;
+  background-color: #f7f7f7;
+  text-align: center;
+}
+
+.team-members {
+  display: flex;
+  justify-content: space-around;
+}
+
+.team-member {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  width: 30%;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.team-member img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+
+h3 {
+  margin-top: 10px;
+}
+
+p {
+  color: #777;
+}
+
+.team-content {
+  text-align: justify;
+  margin: 4rem 6rem 2rem 6rem;
+  padding: 10px;
+}
+
+/* Media query for tablets (768px and below) */
+@media (max-width: 768px) {
   .team-members {
-    display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
   }
-  
+
   .team-member {
-    background: white;
-    border-radius: 10px;
-    padding: 20px;
-    width: 30%;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    margin-bottom: 20px;
   }
-  
-  .team-member img {
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
+
+  .team-content {
+    margin: 2rem 3rem;
   }
-  
-  h3 {
-    margin-top: 10px;
+}
+
+/* Media query for mobile devices (480px and below) */
+@media (max-width: 480px) {
+  .team-member {
+    width: 100%;
+    padding: 15px;
   }
-  
-  p {
-    color: #777;
+
+  .team-content {
+    margin: 1rem 1.5rem;
   }
-  
+}

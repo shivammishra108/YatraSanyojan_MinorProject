@@ -1,85 +1,72 @@
+.travel-plans-section h2{
+  color: var(--heading-color);
+  font-size: 2.5rem;
+}
+
 .travel-plans-section {
-    padding: 4rem 2rem;
-    text-align: center;
-  }
+  text-align: center;
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.plans-container {
+  overflow: hidden; 
+  height: 300px; 
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.plan-item {
+  transition: opacity 0.5s ease-in-out; 
+  position: absolute;
+  top: 0; 
+  left: 0; 
+  width: 100%;
+  opacity: 0; 
+  pointer-events: none; 
+}
+
+.plan-item.active {
+  opacity: 1; 
+  pointer-events: auto; 
+}
+
+.plan-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 300px; 
+  margin: 10px 0;
+  border-radius: 8px; 
   
+}
+
+.plan-icon {
+  font-size: 3.5rem; 
+  margin-bottom: 10px; 
+  color: rgb(247, 102, 50);
+  
+}
+
+.plan-title{
+  color: rgb(228, 106, 6);
+  font-size: 2rem;
+  font-weight: 500  ;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
   .plans-container {
-    display: flex;
-    flex-direction: column; /* Stack plans vertically */
-    align-items: center; /* Center items horizontally */
-    gap: 20px; /* Space between items */
-    position: relative; /* Allow absolute positioning of items */
+    height: 250px;
   }
-  
-  .plan-item {
-    width: 300px; /* Fixed width for each item */
-    height: 350px; /* Fixed height for each item */
-    position: relative; /* Allow absolute positioning inside */
-    cursor: pointer; /* Change cursor to pointer */
-    overflow: hidden; /* Hide overflow for smooth transitions */
+}
+
+@media (max-width: 480px) {
+  .plans-container {
+    height: 200px; 
   }
-  
-  .plan-inner {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d; /* Maintain 3D space */
-    transition: transform 0.6s; /* Smooth transition for flip effect */
-    display: flex; /* Stack front and back */
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .plan-item:hover .plan-inner {
-    transform: rotateY(180deg); /* Flip effect on hover */
-  }
-  
-  .plan-front,
-  .plan-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden; /* Hide back face when flipping */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-  }
-  
-  .plan-front {
-    background-color: var(--primary-color);
-    color: white;
-  }
-  
-  .plan-back {
-    background-color: var(--heading-color);
-    color: white;
-    transform: rotateY(180deg); /* Keep back face rotated for flip effect */
-  }
-  
-  .plan-icon {
-    font-size: 3rem; /* Increase icon size */
-    margin-bottom: 1rem; /* Space below the icon */
-    transition: transform 0.3s; /* Transition for scaling effect */
-  }
-  
-  .plan-icon:hover {
-    transform: scale(1.2); /* Scale icon on hover */
-  }
-  
-  .plan-details {
-    margin-top: 1rem; /* Space above the details */
-    font-size: 0.9rem; /* Slightly smaller font size for details */
-    text-align: center; /* Align text to center */
-  }
-  
-  h2 {
-    font-size: 2.5rem; /* Size of the section heading */
-    margin-bottom: 2rem; /* Space below the heading */
-    color: #0b2727; /* Heading color */
-    font-family: var(--subtitle-font-name); /* Custom font for the heading */
-  }
-  
+}

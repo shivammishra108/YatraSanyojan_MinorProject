@@ -1,8 +1,16 @@
 .search__bar{
     padding: 0.5rem;
     border-radius: 50px;
-    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    box-shadow: rgba(17, 12, 46, 0.45) 0px 48px 100px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
+
+.search__bar:hover{
+    box-shadow: rgba(17, 12, 46, 0.45) 0px 48px 100px 0px, rgba(17, 12, 46, 0.25) 0px -20px 30px 0px;;}
+
 
 .form__group span{
     font-size: 1.8rem;
@@ -27,6 +35,9 @@
     border-right: 2px solid #ddd;
 }
 
+.search__iocn{
+    align-items: right;
+}
 .search__iocn i{
     font-size: 1.6rem;
     padding: 0.5rem;
@@ -34,6 +45,10 @@
     color: #fff;
     border-radius: 10px 5px 10px 5px;
     cursor: pointer;
+}
+
+.search__iocn i:hover{
+    color: #ee6e6e;
 }
 
 
